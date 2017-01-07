@@ -20,6 +20,7 @@ if ($result->num_rows > 0) {
 
 $result2 = $conn->query("select DeviceName from Devices where DeviceType='3';"); 
 echo "Select Printer Name";
+echo "<br \>";
 echo " <br \>";
 echo "<select name='printers'>";
 
