@@ -3,6 +3,9 @@
 include 'dbInfo.php';
 
 echo "<html>";
+echo "<head>";
+echo "<title>IT ERP</title>";
+echo "</head>";
 echo "<body>";
 
 $sql = "select DeviceName, Date, PageCount from PrintCounts JOIN Devices ON PrintCounts.DeviceID=Devices.DeviceID WHERE PrintCounts.DeviceID='3';";
@@ -37,6 +40,45 @@ else {
 	echo "0 Results";
 }
 	echo "</select>";
+
+echo "<form action='input.php' method='POST'>";
+echo "<table border='1'>";
+  echo "<tr>";
+    echo "<td align='center'>Enter Daily Print Counts</td>";
+  echo "</tr>";
+  echo "<tr>";
+  echo "<td>";
+  echo "<table>";
+    echo "<tr>";
+      echo "<td>Printer ID</td>";
+      echo "<td><input type='text' name='printerID' size='20'>";
+      echo "</td>";
+    echo "</tr>";
+    echo "<tr>";
+      echo "<td>Printer Type</td>";
+      echo "<td><input type='text' name='printerType' size='20'>";
+      echo "</td>";
+    echo "</tr>";
+    echo "<tr>";
+      echo "<td>Date</td>";
+      echo "<td><input type='text' name='date' size='20'>";
+      echo "</td>";
+    echo "</tr>";
+    echo "<tr>";
+      echo "<td>Print Count</td>";
+      echo "<td><input type='text' name='printCount' size='20'>";
+      echo "</td>";
+    echo "</tr>";
+    echo "<tr>";
+      echo "<td></td>";
+      echo "<td align='right'><input type='submit' name='submit' value='Sent'></td>";
+    echo "</tr>";
+    echo "</table>";
+  echo "</td>";
+echo "</tr>";
+echo "</table>";
+echo "</form>";
+
 	echo "</body>";
 	echo "</html>";
 
